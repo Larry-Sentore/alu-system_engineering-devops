@@ -1,0 +1,7 @@
+#!/usr/gin/env bash
+#Client Configuration File
+Host myserver
+HostName your.server.ip.or.hostname
+User ubuntu
+IdentifyFile ~/.ssh/school
+PasswordAuthenticatio no
