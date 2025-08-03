@@ -1,7 +1,6 @@
 #!/usr/gin/env bash
 #Client Configuration File
-Host myserver
-HostName your.server.ip.or.hostname
-User ubuntu
-IdentifyFile ~/.ssh/school
-PasswordAuthenticatio no
+Host 6662-web-01
+    HostName 18.204.194.153
+    User ubuntu
+    IdentityFile ~/.ssh/school
