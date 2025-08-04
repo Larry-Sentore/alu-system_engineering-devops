@@ -1,13 +1,23 @@
 #!/usr/bin/env bash
-#installation of the ufw
-#denying incoming and outgoing traffics
-#except the TCP ports for HTTPS, HTTP and SSH
-sudo apt install ufw
-sudo ufw status
-sudo ufw enable
+# Install UFW and configure firewall rules
+
+sudo apt-get update
+sudo apt-get install -y ufw
+
+# Set default policies
 sudo ufw default deny incoming
-sudo ufw default allow outgoing
+sudo ufw default deny outgoing
+
+# Allow incoming traffic on SSH, HTTP, HTTPS
 sudo ufw allow 22/tcp
-sudo ufw allow 443/tcp
 sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+
+# Allow outgoing traffic on SSH, HTTP, HTTPS
+sudo ufw allow out 22/tcp
+sudo ufw allow out 80/tcp
+sudo ufw allow out 443/tcp
+
+# Enable UFW and show status
+sudo ufw enable
 sudo ufw status verbose
